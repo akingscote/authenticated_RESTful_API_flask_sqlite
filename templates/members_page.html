@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block title %}Members Page{% endblock %}
+
+{% block head %}
+{% endblock %}
+
+{% block content %}
+	<div class="large_headline">Welcome {{ current_user.username }}</div>
+	<a href={{ url_for('home_page') }}>Home page</a>	
+{% endblock %}

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+<head>
+    {% block head %}
+    <title>{% block title %}{% endblock %}</title>
+    {% endblock %}
+</head>
+<body>
+	<div id="login_info">
+	{% if current_user.is_authenticated %}
+	<div>
+		
+		<a href="{{ url_for('logout') }}"><button class="fancy_button">Log Out</button></a>
+	</div>
+
+	{% endif %}
+	</div>
+
+    <div id="content">{% block content %}{% endblock %}</div>
+
+    <div id="footer">
+        {% block footer %}
+        <!-- &copy; Copyright 2017 by <a href="www.akingscote.co.uk">akingscote</a>. -->
+        {% endblock %}
+    </div>
+</body>
+</html>
